@@ -18,6 +18,13 @@ jobs:
       - name: Setup env
         run: |
           cat << EOF > .env
+          REACT_APP_FIREBASE_DOMAIN="domain"
+          REACT_APP_FIREBASE_DATABASE="domain"
+          REACT_APP_FIREBASE_PROJECT_ID="domain"
+          REACT_APP_FIREBASE_STORAGE_BUCKET="domain"
+          REACT_APP_FIREBASE_SENDER_ID="domain"
+          REACT_APP_FIREBASE_APP_ID="domain"
+          REACT_APP_FIREBASE_LOCATION_ID="domain"          
           REACT_APP_FIREBASE_LOCATION_ID="europe-west"
           REACT_APP_FIREBASE_KEY=${{ secrets.FIREBASE_KEY }}
           EOF
