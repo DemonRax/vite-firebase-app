@@ -1,11 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Suspense } from 'react';
+import { createRoot } from 'react-dom/client';
 import { App } from './ui/App';
 import './styles/main.scss';
 
-ReactDOM.render(
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById('root')
+        <Suspense fallback={<div>Loading...</div>}>
+            <App />
+        </Suspense>
+    </React.StrictMode>
 );
